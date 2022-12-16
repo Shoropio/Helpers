@@ -2,8 +2,6 @@
 
 namespace App\Libraries;
 
-// use CodeIgniter\HTTP\RedirectResponse;
-
 class Helpers
 {
     public function reverseString(string $string)
@@ -159,11 +157,11 @@ class Helpers
         $output = (int) round($words / $words_per_minute);
 
         if ($output == 0) { 
-            $suffix = ' ' . trans('minute');  
+            $suffix = ' ' . 'minute';  
         } elseif ($output == 1) { 
-            $suffix = ' ' . trans('minute');
+            $suffix = ' ' . 'minute';
         } else { 
-            $suffix = ' ' . trans('minutes');
+            $suffix = ' ' . 'minutes';
         }
         
         return $output . $suffix;
@@ -281,6 +279,7 @@ class Helpers
         return implode('</p>', $new_paragraphs);
     }
 
+    //
     public function stringToArray($input) {
         $output = array();
         $string_data = explode(',' ,$input);
@@ -289,27 +288,4 @@ class Helpers
         }
         return $output;
     }
-
-   
-
-    /*function stringToArray($string) {
-        $array = explode(',', $string);
-
-        return $array;
-    }
-
-    function generate_ids_string_categories($array)
-    {
-        if (empty($array)) {
-            return "0";
-        } else {
-            $array_new = array();
-            foreach ($array as $item) {
-                if (!empty($item)) {
-                    array_push($array_new, $item->name);
-                }
-            }
-            return $array_new;
-        }
-    }*/
 }
